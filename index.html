@@ -325,10 +325,15 @@
                 
                 const link = document.createElement('a');
                 link.className = 'file-link';
-                link.href = node.path;
+                // Use GitHub blob raw endpoint to correctly serve LFS files (works better on mobile)
+                const blobBase = 'https://github.com/Ewerton-Jose/RPGs-PT-BR/blob/main/';
+                const encodedPath = node.path.split('/').map(encodeURIComponent).join('/');
+                link.href = blobBase + encodedPath + '?raw=1';
                 link.textContent = node.name;
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
+                // Hint browser to download rather than preview when possible
+                link.setAttribute('download', node.name);
                 
                 const badge = document.createElement('span');
                 badge.className = node.extension === 'pdf' ? 'pdf-badge' : 'txt-badge';
