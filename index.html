@@ -352,6 +352,10 @@
                 link.rel = 'noopener noreferrer';
                 // Hint browser to download rather than preview when possible
                 link.setAttribute('download', node.name);
+                // Show alert when download starts
+                link.addEventListener('click', function() {
+                    alert('📥 Iniciando download de: ' + node.name);
+                });
                 
                 const badge = document.createElement('span');
                 badge.className = node.extension === 'pdf' ? 'pdf-badge' : 'txt-badge';
