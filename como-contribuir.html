@@ -281,33 +281,13 @@
             <div class="step">
                 <span class="step-number">2</span>
                 <div class="step-title">Clone o Repositório</div>
-                <div class="code-block">git clone https://github.com/Ewerton-Jose/RPGs-PT-BR.git
+                <div class="code-block">git clone https://github.com/SEU-USUARIO/RPGs-PT-BR.git
 cd RPGs-PT-BR</div>
+                <p><strong>Dica:</strong> Substitua SEU-USUARIO pelo seu nome de usuário do GitHub!</p>
             </div>
             
             <div class="step">
                 <span class="step-number">3</span>
-                <div class="step-title">Configure o Git LFS (Importante!)</div>
-                <p>Como os PDFs são arquivos grandes, o repositório usa Git LFS (Large File Storage). Você precisa instalá-lo e configurá-lo:</p>
-                <div class="code-block"># Instale o Git LFS (se ainda não tiver)
-# Ubuntu/Debian:
-sudo apt-get install git-lfs
-
-# macOS:
-brew install git-lfs
-
-# Windows: baixe de https://git-lfs.github.com/
-
-# Configure o LFS no repositório
-git lfs install
-git lfs track "*.pdf"</div>
-                <div class="highlight">
-                    <strong>💡 Por que LFS?</strong> PDFs e arquivos grandes podem ultrapassar 100MB, e o Git LFS permite que eles sejam versionados sem sobrecarregar o repositório.
-                </div>
-            </div>
-            
-            <div class="step">
-                <span class="step-number">4</span>
                 <div class="step-title">Organize Seus Arquivos</div>
                 <p>Dentro de "livros e fichas pdf", crie uma pasta com o nome do seu RPG e coloque os arquivos lá:</p>
                 <div class="code-block">mkdir "livros e fichas pdf/meu-rpg"
@@ -315,16 +295,15 @@ git lfs track "*.pdf"</div>
             </div>
             
             <div class="step">
-                <span class="step-number">5</span>
+                <span class="step-number">4</span>
                 <div class="step-title">Faça o Commit e Push</div>
                 <div class="code-block">git add .
 git commit -m "Adiciona RPG [Nome]"
 git push origin main</div>
-                <p><strong>Nota:</strong> O Git LFS cuidará automaticamente dos arquivos grandes durante o push!</p>
             </div>
             
             <div class="step">
-                <span class="step-number">6</span>
+                <span class="step-number">5</span>
                 <div class="step-title">Crie uma Pull Request</div>
                 <p>Seu fork pedirá para criar uma pull request. Clique e descreva o RPG adicionado!</p>
             </div>
