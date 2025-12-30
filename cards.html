@@ -360,6 +360,10 @@
                     a.rel = 'noopener noreferrer';
                     // Hint browser to download rather than preview when possible
                     a.setAttribute('download', file.name);
+                    // Show alert when download starts
+                    a.addEventListener('click', function() {
+                        alert('📥 Iniciando download de: ' + file.name);
+                    });
                     li.appendChild(a);
                     pdfList.appendChild(li);
                 });
