@@ -33,14 +33,14 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
             padding: 20px;
         }
         
         .card {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -179,10 +179,28 @@
             padding: 20px;
         }
         
+        .contribute-btn {
+            display: inline-block;
+            margin: 15px 10px 15px 0;
+            padding: 12px 24px;
+            background: #0d1b2a;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .contribute-btn:hover {
+            background: #1a3a52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        
         .view-mode-btn {
-            display: block;
-            max-width: 300px;
-            margin: 0 auto 30px;
+            display: inline-block;
+            margin: 15px 0;
             padding: 12px 24px;
             background: #667eea;
             color: white;
@@ -199,13 +217,21 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
+        
+        .button-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🎲 Sistemas de RPG Disponíveis 🎲</h1>
         
-        <a href="index.html" class="view-mode-btn">📋 Modo de Visualização em Lista</a>
+        <div class="button-container">
+            <a href="como-contribuir.html" class="contribute-btn">➕ Contribuir com um RPG</a>
+            <a href="index.html" class="view-mode-btn">📋 Modo de Visualização em Lista</a>
+        </div>
         
         <div class="grid">
             <div class="card" onclick="showPDFs('3dt')">

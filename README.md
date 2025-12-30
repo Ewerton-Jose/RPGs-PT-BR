@@ -25,4 +25,15 @@ git push origin main
 
 Para mais detalhes, veja a página [como-contribuir.html](https://ewerton-jose.github.io/RPGs-PT-BR/como-contribuir.html)
 
+## 🌟 Colaboradores
+
+Agradecemos a todos que contribuíram para este repositório:
+
+<!-- Lista de colaboradores - Adicione seu nome ao contribuir! -->
+- **[Ewerton José](https://github.com/Ewerton-Jose)** - Criador e mantenedor do projeto
+
+---
+
+**Quer ver seu nome aqui?** Contribua com um RPG e faça parte desta comunidade! 🎲
+
 ![Anao RPG](https://rpguildbrasil.ucoz.net/anao002.png)

@@ -240,41 +240,56 @@
             <div class="step">
                 <span class="step-number">3</span>
                 <div class="step-title">Faça um Fork do Repositório</div>
-                <p>Clique no botão "Fork" no canto superior direito da página do repositório. e depois em <strong>Create Fork</strong> Isso criará uma cópia completa do repositório na sua conta do GitHub, onde você poderá fazer suas alterações livremente.</p>
+                <p>Clique no botão <strong>Fork</strong> no canto superior direito da página do repositório e depois em <strong>Create Fork</strong>. Isso criará uma cópia completa do repositório na sua conta do GitHub, onde você poderá fazer suas alterações livremente.</p>
             </div>
             
             <div class="step">
                 <span class="step-number">4</span>
                 <div class="step-title">Navegue até a Pasta Correta</div>
-                <p>Abra a pasta "livros e fichas pdf" no seu fork (a cópia que você acabou de criar)</p>
+                <p>Abra a pasta <strong>livros e fichas pdf</strong> no seu fork (a cópia que você acabou de criar)</p>
             </div>
             
             <div class="step">
                 <span class="step-number">5</span>
                 <div class="step-title">Crie uma Nova Pasta</div>
-                <p>Clique em "Add file" → "Create new file"</p>
+                <p>Clique em <strong>Add file</strong> → <strong>Create new file</strong></p>
                 <p>Na caixa de nome do arquivo, escreva: <code>nome-do-rpg/novoarquivo.txt</code> (use nome em minúsculas, com hífens).</p>
                 <p>Quando você coloca uma barra (<code>/</code>) no nome, o GitHub cria a pasta <strong>nome-do-rpg</strong> automaticamente e coloca o arquivo dentro dela. Você pode manter esse arquivo ou trocá-lo depois pelos PDFs.</p>
-                <p>Depois de salvar, a pasta já estará criada dentro de "livros e fichas pdf".</p>
+                <p>Depois de clicar no botão <strong>Commit changes</strong>, abrirá um pop-up. Clique no botão de commit abaixo e a pasta já estará criada dentro de <strong>livros e fichas pdf</strong>.</p>
+                <div class="highlight">
+                    <strong>⚠️ Evite Caracteres Especiais:</strong> Use apenas letras simples (a-z), números (0-9), underscores (_) e hífens (-). Evite ç, á, é, í, ó, ú, ã, õ, ê, â e outros caracteres acentuados, pois podem causar problemas de compatibilidade.
+                </div>
             </div>
             
             <div class="step">
                 <span class="step-number">6</span>
-                <div class="step-title">Upload dos Arquivos</div>
-                <p>Clique em "Upload files" na sua pasta criada e selecione os arquivos do seu RPG (PDFs, fichas, etc)</p>
+                <div class="step-title">Upload dos Arquivos do RPG</div>
+                <p>Clique em <strong>Add file</strong>, depois clique em <strong>Upload files</strong> na pasta que você criou e selecione os arquivos do seu RPG (PDFs, fichas, tokens, mapas, etc).</p>
+                <p>Você pode fazer upload de vários arquivos de uma vez. Selecione tudo que deseja compartilhar.</p>
+                <div class="highlight">
+                    <strong>⚠️ Limite de Tamanho:</strong> A interface web do GitHub aceita arquivos de até 25 MB. Essa opção é ideal para fichas, sistemas pequenos, tokens e mapas. Se seus arquivos forem maiores, utilize a Opção 2 (via Git).
+                </div>
             </div>
             
             <div class="step">
                 <span class="step-number">7</span>
                 <div class="step-title">Confirme o Commit das Alterações</div>
-                <p>Na página de upload, role para baixo, escreva uma mensagem curta (ex: <em>"Adiciona RPG X"</em>) e clique em <strong>Commit changes</strong>. Isso salva suas alterações no seu fork.</p>
+                <p>Após fazer o upload dos arquivos, escreva uma mensagem descrevendo sua contribuição onde está escrito <strong>add files via upload</strong>. Digite uma descrição clara (ex: <em>"Adicionado o RPG X com fichas e mapas"</em>) e clique em <strong>Commit changes</strong>. Isso salva suas alterações no seu fork.</p>
             </div>
             
             <div class="step">
                 <span class="step-number">8</span>
                 <div class="step-title">Faça uma Pull Request</div>
-                <p>Volta para seu fork e clique em "Contribute" → "Open pull request"</p>
-                <p>Descreva o RPG que você adicionou e pronto! 🎉</p>
+                <p>Volte para seu fork e clique em <strong>Contribute</strong> → <strong>Open pull request</strong></p>
+                <p>Descreva o RPG que você adicionou e clique em <strong>Create pull request</strong>! 🎉</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">9</span>
+                <div class="step-title">Aguarde a Análise e Aceitação</div>
+                <p>Após enviar sua Pull Request, o mantenedor do repositório irá revisar sua contribuição. Este processo pode levar alguns dias, dependendo da disponibilidade.</p>
+                <p>Durante a revisão, pode ser solicitado que você faça algumas alterações ou correções. Fique atento às notificações do GitHub!</p>
+                <p>Assim que sua contribuição for aprovada, ela será mesclada ao repositório principal e seu RPG estará disponível para toda a comunidade! 🎊</p>
             </div>
             
             <div class="highlight">
@@ -350,8 +365,13 @@ tokens e mapas/
                 <li>Use letras minúsculas</li>
                 <li>Substitua espaços por underscores (_)</li>
                 <li>Use hífens (-) para separar palavras quando apropriado</li>
+                <li><strong>EVITE caracteres especiais</strong> como ç, á, é, í, ó, ú, ã, õ, ê, â, etc.</li>
+                <li>Substitua "ç" por "c", "ã" por "a", e assim por diante</li>
                 <li>Exemplos: <code>d20_sistema</code>, <code>jujutsu_versao_2.0</code>, <code>meu_rpg_favorito</code></li>
             </ul>
+            <div class="highlight">
+                <strong>⚠️ Importante:</strong> Caracteres especiais podem causar problemas de compatibilidade entre sistemas operacionais e <strong>quebrar</strong> a visualização. Use apenas letras simples (a-z), números (0-9), underscores (_) e hífens (-).
+            </div>
         </div>
         
         <div class="section">
