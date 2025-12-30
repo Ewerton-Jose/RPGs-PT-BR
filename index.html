@@ -311,11 +311,15 @@
                 
                 let collapsed = !isRoot;
                 
-                toggle.addEventListener('click', () => {
+                const toggleFolder = () => {
                     collapsed = !collapsed;
                     folder.classList.toggle('collapsed');
                     toggle.textContent = collapsed ? '▶' : '▼';
-                });
+                };
+                
+                toggle.addEventListener('click', toggleFolder);
+                content.addEventListener('click', toggleFolder);
+                content.style.cursor = 'pointer';
                 
                 if (collapsed && !isRoot) {
                     folder.classList.add('collapsed');
