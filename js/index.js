@@ -22,13 +22,36 @@ async function fetchGitHubFolder(path = '') {
     try {
         const url = path ? `${GITHUB_API_BASE}/${encodeURIComponent(path)}` : GITHUB_API_BASE;
         const response = await fetch(url);
+        
+        // Verificar se é erro de rate limit (403)
+        if (response.status === 403) {
+            const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+            let mensagem = '⚠️ O servidor está com problemas devido ao limite de requisições da API do GitHub.';
+            
+            if (rateLimitReset) {
+                const resetTime = new Date(rateLimitReset * 1000);
+                const now = new Date();
+                const minutosRestantes = Math.ceil((resetTime - now) / 60000);
+                
+                if (minutosRestantes > 0) {
+                    mensagem += `\n\n⏰ Tente novamente em aproximadamente ${minutosRestantes} minuto${minutosRestantes > 1 ? 's' : ''}.`;
+                } else {
+                    mensagem += '\n\n⏰ Tente novamente em alguns instantes.';
+                }
+            } else {
+                mensagem += '\n\n⏰ Tente novamente em aproximadamente 60 minutos.';
+            }
+            
+            throw new Error('RATE_LIMIT:' + mensagem);
+        }
+        
         if (!response.ok) {
             throw new Error(`Erro ao buscar dados: ${response.status}`);
         }
         return await response.json();
     } catch (error) {
         console.error('Erro ao buscar pasta do GitHub:', error);
-        return [];
+        throw error;
     }
 }
 
@@ -184,7 +207,15 @@ async function initializeTree() {
         renderTree(treeData, root, true);
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
-        root.innerHTML = '<div style="text-align: center; padding: 20px; color: #e74c3c;">❌ Erro ao carregar arquivos. Tente recarregar a página.</div>';
+        
+        // Verificar se é erro de rate limit
+        if (error.message && error.message.startsWith('RATE_LIMIT:')) {
+            const mensagem = error.message.replace('RATE_LIMIT:', '');
+            alert(mensagem);
+            root.innerHTML = '<div style="text-align: center; padding: 20px; color: #f39c12;"><strong>⚠️ Limite de requisições excedido</strong><br><br>Por favor, aguarde alguns minutos e recarregue a página.</div>';
+        } else {
+            root.innerHTML = '<div style="text-align: center; padding: 20px; color: #e74c3c;">❌ Erro ao carregar arquivos. Tente recarregar a página.</div>';
+        }
     }
 }
 
