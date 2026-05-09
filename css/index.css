@@ -5,251 +5,276 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0d1b2a 100%);
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(216, 163, 108, 0.22), transparent 32%),
+        radial-gradient(circle at top right, rgba(93, 111, 173, 0.22), transparent 28%),
+        linear-gradient(135deg, #0c1020 0%, #121b2f 52%, #09111f 100%);
+    color: #f4efe8;
     min-height: 100vh;
-    padding: 20px;
+    padding: 16px 12px;
 }
 
-.container {
-    max-width: 1000px;
+.page-shell {
+    max-width: 100%;
     margin: 0 auto;
-    background: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    padding: 30px;
 }
 
 h1 {
-    color: #0d1b2a;
-    margin-bottom: 10px;
-    text-align: center;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    line-height: 1.1;
 }
 
-.subtitle {
-    text-align: center;
-    color: #444;
-    margin-bottom: 30px;
-    font-size: 14px;
+.hero {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 8px 4px 4px;
+    max-width: 100%;
 }
 
-.stats {
-    display: none;
+.eyebrow {
+    color: #f0b66b;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.hero-text {
+    max-width: 62ch;
+    color: rgba(244, 239, 232, 0.8);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.cards-grid {
+    display: grid;
+    gap: 14px;
+    padding-inline: 8px;
+}
+
+.rpg-card {
+    --btn-from: #f0b66b;
+    --btn-to: #d88b3a;
+    --accent: #f0b66b;
+
+    display: grid;
+    grid-template-columns: minmax(80px, 120px) minmax(0, 1fr);
+    gap: 12px;
+    max-height: 180px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    background: rgba(11, 16, 30, 0.64);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.32);
+    padding: 8px;
+}
+
+.card-cover {
+    position: relative;
+    display: grid;
+    align-content: center;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    padding: 15px;
-    background: #e8e8e8;
+    gap: 8px;
+    max-height: 180px;
+    padding: 8px;
+    color: #fff8ef;
+    isolation: isolate;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-position: center;
     border-radius: 8px;
 }
 
-.stat {
-    text-align: center;
+
+
+.card-content {
+    display: grid;
+    align-content: center;
+    gap: 8px;
+    padding: 10px;
 }
 
-.stat-number {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0d1b2a;
+.card-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    font-weight: 700;
 }
 
-.stat-label {
-    font-size: 12px;
-    color: #666;
-    margin-top: 5px;
+.card-content h2 {
+    font-size: clamp(0.95rem, 2vw, 1.3rem);
+    line-height: 1.1;
+    margin: 0;
 }
 
-.tree {
-    font-family: 'Courier New', monospace;
-    font-size: 15px;
-    color: #333;
+.card-content p {
+    color: rgba(244, 239, 232, 0.8);
+    line-height: 1.3;
+    max-width: 60ch;
+    font-size: 0.75rem;
+    margin: 0;
 }
 
-.tree-item {
+/* Paletas por card (sobrescrevem variáveis padrão) */
+.rpg-card.horizons {
+    --btn-from: #f2c78a;
+    --btn-to: #c98a4a;
+    --accent: #d9a05a;
+}
+
+.rpg-card.xman {
+    --btn-from: #7fc8ef;
+    --btn-to: #2b8fc1;
+    --accent: #4fb3e0;
+}
+
+.rpg-card.pokemon {
+    --btn-from: #f7d67f;
+    --btn-to: #d99b3a;
+    --accent: #e0b26a;
+}
+
+.download-btn {
     display: flex;
-    align-items: center;
-    padding: 4px 0;
-}
-
-.tree-toggle {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    user-select: none;
-    color: #0d1b2a;
-    font-weight: bold;
-}
-
-.tree-toggle:hover {
-    color: #1a3a52;
-}
-
-.tree-content {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-}
-
-.folder-icon {
-    color: #ffa500;
-}
-
-.file-icon {
-    color: #666;
-}
-
-.pdf-badge {
-    display: inline-block;
-    background: #e74c3c;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 8px;
-}
-
-.txt-badge {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 8px;
-}
-
-.file-link {
-    color: #0d1b2a;
+    width: fit-content;
+    min-height: 32px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, var(--btn-from) 0%, var(--btn-to) 100%);
+    color: #111826;
+    font-weight: 700;
+    font-size: 0.75rem;
     text-decoration: none;
-    cursor: pointer;
-    word-break: break-word;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
-.file-link:hover {
-    text-decoration: underline;
-    color: #1a3a52;
+.download-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 14px 30px rgba(216, 139, 58, 0.36);
 }
 
-.folder {
-    margin-left: 20px;
-    max-height: 2000px;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+.download-btn:focus-visible {
+    outline: 3px solid rgba(240, 182, 107, 0.35);
+    outline-offset: 3px;
 }
 
-.folder.collapsed {
-    max-height: 0;
-}
+@media (max-width: 1024px) {
+    body {
+        padding: 14px 10px;
+    }
 
-.folder-name {
-    font-weight: bold;
-    color: #333;
-}
+    .rpg-card {
+        grid-template-columns: minmax(80px, 110px) minmax(0, 1fr);
+        max-height: 160px;
+    }
 
-.contribute-btn {
-    display: inline-block;
-    margin: 15px 0;
-    padding: 6px 16px;
-    background: #0d1b2a;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 13px;
-    transition: background 0.3s;
-}
-
-.contribute-btn:hover {
-    background: #1a3a52;
-    text-decoration: none;
-}
-
-.view-mode-btn {
-    display: inline-block;
-    margin: 15px 0 15px 10px;
-    padding: 6px 16px;
-    background: #667eea;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 13px;
-    transition: background 0.3s;
-}
-
-.view-mode-btn:hover {
-    background: #764ba2;
-    text-decoration: none;
+    .card-cover {
+        max-height: 160px;
+    }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
+    body {
+        padding: 12px 8px;
     }
-    
+
+    .rpg-card {
+        grid-template-columns: 1fr;
+        max-height: auto;
+        min-height: 140px;
+        gap: 10px;
+    }
+
+    .card-cover {
+        max-height: 140px;
+    }
+
+    .card-content {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .hero {
+        margin-bottom: 14px;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
     }
-    
-    .subtitle {
-        font-size: 14px;
-    }
-    
-    .tree {
-        font-size: 12px;
-    }
-    
-    .tree-content {
-        flex-wrap: wrap;
-        gap: 4px;
-    }
-    
-    .file-link {
-        flex: 1;
-        min-width: 0;
-    }
-    
-    .pdf-badge,
-    .txt-badge {
-        margin-left: 0;
-        flex-shrink: 0;
-    }
-    
-    .contribute-btn {
-        font-size: 12px;
-        padding: 5px 14px;
+
+    .cards-grid {
+        gap: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 20px;
-    }
-    
-    .tree {
-        font-size: 13px;
-    }
-    
-    .folder {
-        margin-left: 10px;
-    }
-    
     body {
-        padding: 10px;
+        padding: 10px 6px;
     }
-    
-    .contribute-btn {
-        font-size: 11px;
-        padding: 5px 12px;
-        display: block;
-        text-align: center;
+
+    h1 {
+        font-size: clamp(1rem, 6vw, 1.5rem);
+    }
+
+    .hero {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .hero-text {
+        font-size: 0.8rem;
+    }
+
+    .cards-grid {
+        gap: 10px;
+        padding-inline: 4px;
+    }
+
+    .rpg-card {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 6px;
+        max-height: auto;
+        min-height: 120px;
+    }
+
+    .card-cover {
+        max-height: 120px;
+        padding: 6px;
+    }
+
+    .card-content {
+        padding: 6px;
+        gap: 4px;
+    }
+
+    .card-content h2 {
+        font-size: 0.85rem;
+    }
+
+    .card-content p {
+        font-size: 0.7rem;
+    }
+
+    .download-btn {
+        width: auto;
+        min-height: 28px;
+        padding: 2px 10px;
+        font-size: 0.65rem;
     }
 }

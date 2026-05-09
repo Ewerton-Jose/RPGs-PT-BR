@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice de RPGs - PDFs e TXTs</title>
-    <link rel="icon" type="image/png" href="gnomo.png">
+    <title>RPGs autorais</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="container">
-        <h1>📚 Índice de RPGs - PT-BR</h1>
-        <p class="subtitle">Visualize todos os PDFs e TXTs do repositório</p>
-        
-        <a href="como-contribuir.html" class="contribute-btn">➕ Contribuir com um RPG</a>
-        <a href="cards.html" class="view-mode-btn">🎴 Modo de Visualização em Cards</a>
-        
-        <div class="tree" id="tree-root"></div>
-    </div>
-    
-    <script src="js/index.js"></script>
+    <main class="page-shell">
+        <header class="hero">
+            <h1>RPGs autorais e de amigos próximos</h1>
+            <p class="hero-text">Um repositório rápidos do rpgs que já criei</p>
+        </header>
+
+        <section class="cards-grid" aria-label="Lista de RPGs autorais">
+            <article class="rpg-card">
+                <figure class="card-cover cover-horizons" aria-label="Capa de Reaching Horizons">
+                    <img src="livros e fichas pdf/Reaching_horizons/NovozGorizontesCapa.png" alt="">
+                </figure>
+                <div class="card-content">
+                    <h2>Reaching Horizons</h2>
+                    <p>Um RPG de alta-fantasia medieval focado em campanha curtas, e na variedade de combinações que podem existir</p>
+                    <a class="download-btn" href="livros%20e%20fichas%20pdf/Reaching_horizons/Reaching%20horizons.pdf" download>
+                        Download PDF
+                    </a>
+                    <p>@Hewwerthon</p>
+                </div>
+            </article>
+
+            <article class="rpg-card">
+                <figure class="card-cover cover-xman" aria-label="Capa de RPG Xman">
+                    <img src="livros e fichas pdf/RPG_Xman/rpgxman.png" alt="">
+                </figure>
+                <div class="card-content">
+                    <h2>RPG Xman (Demo)</h2>
+                    <p>Inspirada 100% em Xman, é um rpg focado em oneshoot e poderes mutantes</p>
+                    <a class="download-btn" href="livros%20e%20fichas%20pdf/RPG_Xman/RPG%20XMAN.pdf" download>
+                        Download PDF
+                    </a>
+                </div>
+            </article>
+
+        </section>
+    </main>
 </body>
 </html>
